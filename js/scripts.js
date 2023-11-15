@@ -4,7 +4,7 @@ let pokemonList = [
     {name: "Jigglypuff", height: 4, type: ['normal', 'fairy']}
 ];
 
-for (let i = 0; i < pokemonList[i].length; i++){
+for (let i = 0; i < pokemonList.length; i++) {
   document.write(pokemonList[i].name + " " + "height: " + pokemonList[i].height + ")");
  if (pokemonList[i].height > 5){
     document.write(' - Wow! That\'s a big!');
