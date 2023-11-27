@@ -25,6 +25,10 @@ pokemonRepository.getAll().forEach(function (pokemon) {
   document.write("<p>" + pokemon.name + " " + "height: " + pokemon.height + ")" + "</p>")
 })
 
+pokemonRepository.add({
+  name: "Slowbro", height: 8, type: ['water', 'psychic']
+})
+console.log(pokemonRepository.getAll())
 
 /*
 for (let i = 0; i < pokemonList.length; i++) {
