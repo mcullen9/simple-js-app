@@ -20,7 +20,8 @@ let pokemonRepository = (function () {
   }
 })()
 
-pokemonList.forEach (function (pokemon) {
+console.log(pokemonRepository.getAll())
+pokemonRepository.getAll().forEach(function (pokemon) {
   document.write("<p>" + pokemon.name + " " + "height: " + pokemon.height + ")" + "</p>")
 })
 
