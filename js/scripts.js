@@ -5,7 +5,9 @@ let pokemonList = [
     {name: "Charizard", height: 10, type: ['fire', 'flying']}, 
     {name: "Jigglypuff", height: 4, type: ['normal', 'fairy']}
 ]
-
+function getAll() {
+  return pokemonList;
+}
 })()
 
 pokemonList.forEach (function (pokemon) {
