@@ -8,6 +8,10 @@ let pokemonList = [
 function getAll() {
   return pokemonList;
 }
+return {
+  getAll: getAll,
+  add: add
+}
 })()
 
 pokemonList.forEach (function (pokemon) {
