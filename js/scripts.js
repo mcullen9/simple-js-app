@@ -5,15 +5,17 @@ let pokemonList = [
     {name: "Charizard", height: 10, type: ['fire', 'flying']}, 
     {name: "Jigglypuff", height: 4, type: ['normal', 'fairy']}
 ]
-/*
-for (let i = 0; i < pokemonList.length; i++) {
-  document.write("<p>" + pokemonList[i].name + " " + "height: " + pokemonList[i].height + ")" + "</p>");
- if (pokemonList[i].height > 5){
-    document.write(' - Wow! That\'s a big!');
- }
-} */
+  function getAll() {
+    return pokemonList;
+  }
 
-  pokemonList.forEach (function (pokemon) {
-    document.write("<p>" + pokemon.name + " " + "height: " + pokemon.height + ")" + "</p>")
-  })
+  return {
+    getAll: getAll,
+    add: add
+  }
+
 })()
+
+pokemonList.forEach (function (pokemon) {
+  document.write("<p>" + pokemon.name + " " + "height: " + pokemon.height + ")" + "</p>")
+})
