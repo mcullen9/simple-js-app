@@ -1,3 +1,7 @@
+.pokemon-list {
+    list-style-type: none;
+}
+
 .button-class {
     background-color: red; 
     border: none;
