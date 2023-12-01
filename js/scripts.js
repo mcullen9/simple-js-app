@@ -22,6 +22,7 @@ let pokemonRepository = (function () {
 
 console.log(pokemonRepository.getAll())
 pokemonRepository.getAll().forEach(function (pokemon) {
+  let pokemonList = document.querySelector('pokemon-list');
   document.write("<p>" + pokemon.name + " " + "height: " + pokemon.height + ")" + "</p>")
 })
 
