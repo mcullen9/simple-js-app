@@ -30,10 +30,3 @@ pokemonRepository.add({
 })
 console.log(pokemonRepository.getAll())
 
-/*
-for (let i = 0; i < pokemonList.length; i++) {
-  document.write("<p>" + pokemonList[i].name + " " + "height: " + pokemonList[i].height + ")" + "</p>");
- if (pokemonList[i].height > 5){
-    document.write(' - Wow! That\'s a big!');
- }
-} */
