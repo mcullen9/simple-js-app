@@ -23,24 +23,27 @@ let pokemonRepository = (function () {
       listItem.appendChild(button);
       pokemonList.appendChild(listItem);
 
-    
+      button.addEventListener('click', function(){
+        showDetails(pokemon.name);
+      });
     }
 
-    function showDetails(pokemon) {
-      console.log()
+    function showDetails(pokemon){
+      console.log(pokemon);
     }
 
   return {
     getAll: getAll,
     add: add,
-    addListItem: addListItem
-  }
-})()
+    addListItem: addListItem,
+    showDetails: showDetails
+  };
+})();
 
 console.log(pokemonRepository.getAll())
 pokemonRepository.getAll().forEach(function (pokemon) {
   pokemonRepository.addListItem(pokemon);
-})
+});
 
 pokemonRepository.add({
   name: "Slowbro", height: 8, type: ['water', 'psychic']
