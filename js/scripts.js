@@ -4,7 +4,7 @@ let pokemonRepository = (function () {
       {name: "Bulbasaur", height: 7, type: ['grass', 'poison']}, 
       {name: "Charizard", height: 10, type: ['fire', 'flying']}, 
       {name: "Jigglypuff", height: 4, type: ['normal', 'fairy']}
-  ]
+  ];
 
     function getAll() {
       return pokemonList;
@@ -48,5 +48,5 @@ pokemonRepository.getAll().forEach(function (pokemon) {
 pokemonRepository.add({
   name: "Slowbro", height: 8, type: ['water', 'psychic']
 })
-console.log(pokemonRepository.getAll())
+console.log(pokemonRepository.getAll());
 
