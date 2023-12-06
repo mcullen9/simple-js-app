@@ -22,7 +22,12 @@ let pokemonRepository = (function () {
       button.classList.add('button-class');
       listItem.appendChild(button);
       pokemonList.appendChild(listItem);
+
     
+    }
+
+    function showDetails(pokemon) {
+      console.log()
     }
 
   return {
