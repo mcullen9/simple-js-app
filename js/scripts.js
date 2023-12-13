@@ -1,10 +1,7 @@
 let pokemonRepository = (function () {
 
-  let pokemonList = [
-      {name: "Bulbasaur", height: 7, type: ['grass', 'poison']}, 
-      {name: "Charizard", height: 10, type: ['fire', 'flying']}, 
-      {name: "Jigglypuff", height: 4, type: ['normal', 'fairy']}
-  ];
+  let pokemonList = [];
+  let apiURL = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
     function getAll() {
       return pokemonList;
