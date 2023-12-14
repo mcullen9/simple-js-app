@@ -1,7 +1,7 @@
 let pokemonRepository = (function () {
 
   let pokemonList = [];
-  let apiURL = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
     function getAll() {
       return pokemonList;
@@ -30,7 +30,7 @@ let pokemonRepository = (function () {
     }
 
     function loadList() {
-      return fetch(apiURL).then(function (response) {
+      return fetch(apiUrl).then(function (response) {
         return response.json();
       }).then(function (json) {
         json.results.forEach(function (item) {
@@ -45,6 +45,7 @@ let pokemonRepository = (function () {
       })
     }
 
+    
   return {
     getAll: getAll,
     add: add,
@@ -54,13 +55,16 @@ let pokemonRepository = (function () {
   };
 })();
 
-console.log(pokemonRepository.getAll())
-pokemonRepository.getAll().forEach(function (pokemon) {
-  pokemonRepository.addListItem(pokemon);
+pokemonRepository.loadList().then(function () {
+  pokemonRepository.getAll().forEach(function (pokemon) {
+    pokemonRepository.addListItem(pokemon);
+  });
 });
+
+
 
 pokemonRepository.add({
   name: "Slowbro", height: 8, type: ['water', 'psychic']
 })
-console.log(pokemonRepository.getAll());
+// console.log(pokemonRepository.getAll());
 
