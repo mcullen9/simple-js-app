@@ -22,7 +22,7 @@ let pokemonRepository = (function () {
       pokemonList.appendChild(listItem);
 
       button.addEventListener('click', function(){
-        showDetails(pokemon.name);
+        showDetails(pokemon);
       });
     }
 
@@ -39,7 +39,7 @@ let pokemonRepository = (function () {
         json.results.forEach(function (item) {
           let pokemon = {
             name: item.name,
-            detailsUrl: item.url
+            detailsUrl: item.url,
             imageUrl: item.myImage,
           };
           add(pokemon);
