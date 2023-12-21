@@ -2,7 +2,7 @@
     list-style-type: none;
 }
 
-.button-class {
+.button {
     background-color: red; 
     border: none;
     color: white;
@@ -19,7 +19,7 @@
     color: black;
     border: 2px solid red;
   }
-  
+
   #modal-container {
     position: fixed;
     padding: 20px;
