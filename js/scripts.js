@@ -2,6 +2,7 @@ let pokemonRepository = (function () {
 
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  let modalContainer = document.querySelector('#modal-container');
 
     function getAll() {
       return pokemonList;
@@ -27,7 +28,7 @@ let pokemonRepository = (function () {
 
     function showDetails(pokemon) {
       loadDetails(pokemon).then(function () {
-        console.log(pokemon);
+        showModal(pokemon);
       });
     }
 
@@ -62,8 +63,6 @@ let pokemonRepository = (function () {
     }
     
     function showModal(title, text) {
-      let modalContainer = document.querySelector('#modal-container');
-    
       // Clear all existing modal content
       modalContainer.innerHTML = '';
     
@@ -90,6 +89,11 @@ let pokemonRepository = (function () {
     
       modalContainer.classList.add('is-visible');
     }
+
+    function hideModal() {
+      modalContainer.classList.remove('is-visible');
+    }
+
     modalContainer.addEventListener('click', (e) => {
       // Since this is also triggered when clicking INSIDE the modal
       // We only want to close if the user clicks directly on the overlay
@@ -99,19 +103,24 @@ let pokemonRepository = (function () {
       }
     });
 
-  }
+  
+    return {
+      getAll: getAll,
+      add: add,
+      addListItem: addListItem,
+      showDetails: showDetails,
+      loadList: loadList,
+      loadDetails: loadDetails
+    };
+  })();
 
-  function hideModal() {
-    let modalContainer = document.querySelector('#modal-container');
-    modalContainer.classList.remove('is-visible');
-  }
 
   window.addEventListener('keydown', (e) => {
-    let modalContainer = document.querySelector('#modal-container');
     if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
       hideModal();  
     }
   });
+
 
   document.querySelector('#show-modal').addEventListener('click', () => {
     showModal('Modal title', 'This is the modal content!');
@@ -119,15 +128,7 @@ let pokemonRepository = (function () {
 
   
 
-  return {
-    getAll: getAll,
-    add: add,
-    addListItem: addListItem,
-    showDetails: showDetails,
-    loadList: loadList,
-    loadDetails: loadDetails
-  };
-})();
+  
 
 pokemonRepository.loadList().then(function () {
   pokemonRepository.getAll().forEach(function (pokemon) {
