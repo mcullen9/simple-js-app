@@ -117,9 +117,7 @@ let pokemonRepository = (function () {
     showModal('Modal title', 'This is the modal content!');
   });
 
-  // THE RETURN STATEMENT HERE
-})();
-
+  
 
   return {
     getAll: getAll,
