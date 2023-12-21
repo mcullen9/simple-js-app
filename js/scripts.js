@@ -50,14 +50,14 @@ let pokemonRepository = (function () {
       })
     }
 
-    function loadDetails(pokemon) {
-      let url = pokemon.detailsUrl;
+    function loadDetails(item) {
+      let url = item.detailsUrl;
       return fetch(url).then(function (response) {
         return response.json();
         }).then(function (details) {
-          pokemon.imageUrl = details.sprites.front_default;
-          pokemon.height = details.height;
-          pokemon.types = details.types;
+          item.imageUrl = details.sprites.front_default;
+          item.height = details.height;
+          item.types = details.types;
         }).catch(function (e) {
           console.error(e);
         });
