@@ -8,4 +8,4 @@ A small web application with HTML, CSS, and JavaScript that loads data about Pok
 
 ## Links
 - The external API used in this project can be found [here](https://pokeapi.co/)
-- Click to view the app in action [here]()
+- Click to view the app in action [here](https://mcullen9.github.io/simple-js-app/)
